@@ -71,3 +71,34 @@ kill <id>
 apt install net-tools
 netstat -lpnt
 ```
+
+7. Security best practices
+- Create seperate user for every application
+- This user should only have access to the App. Jenkins user for jenkins, nexus for nexus...
+- Dont work with Root user
+
+```
+adduser bojan
+# type password
+
+# add user to sudo
+usermod -aG sudo bojan
+
+# switch to different users
+su - bojan
+pwd
+
+paths in termina will have $ for standard user
+instead # for root user
+
+# to ssh with new account you have to add ssh
+1. First ssh as root
+2. cat .ssh/id.rsa.pub
+
+# in different log user
+1. su - bojan
+2. In home dir, create .ssh
+3. sudo vim .ssh/authorized_keys
+4. copy public ssh  
+5. ssh bojan@55.555.555.555
+```
