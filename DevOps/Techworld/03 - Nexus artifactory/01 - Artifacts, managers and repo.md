@@ -220,6 +220,8 @@ rootProject.name=my-app
 ./gradlew publish 
 ```
 
+# View uploaded snapshot
+![](img/02 - snapshot repository.png)
 
 # Use api to view nexus repo
 Nexus ima api za pregled repo i components.
