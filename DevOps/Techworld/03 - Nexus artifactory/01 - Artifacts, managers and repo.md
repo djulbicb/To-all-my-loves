@@ -100,9 +100,11 @@ Create user
 
 Create Role
 > Zupcanik > Security > Roles - privilidges. Privilegije su admin i view. Izaberi view * `nx-repository-view-maven2-*-*`.
+![](img/01_user_role.png)
 
 Assign role
 > Assign role to user on user view.
+![](img/01_user_local.png)
 
 ### 2a. Configure maven **
 Add credentials for the local nexus user in `.m2/settings.xml`
