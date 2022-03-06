@@ -1,7 +1,7 @@
 Nexus uses blob stores for storing web components. Blob stores is internal storage mechanism for binary files. 
 
 # Blob store
-![](img/01 - blob store.png)
+![](img/01_blob_store.png)
 
 Blob store cannot be modified after creating. So you should know how much space you gonna need, how many jars, how manny policies....
 
@@ -16,6 +16,7 @@ In blob stores config there is a field for path ie. default. Data is stored in f
 When creating a repository you pick a blob store. This connection is permananent.
 
 # Components and assets - what is difference
+![](img/03_component.png)
 Component are abstract represantation or what we are uploading.
 Component is any package that is uploaded to repo, ie. package, archive, jar... This is a general definition of packaged file.
 

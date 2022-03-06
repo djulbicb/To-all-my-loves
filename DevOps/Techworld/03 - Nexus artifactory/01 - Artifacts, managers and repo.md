@@ -221,7 +221,7 @@ rootProject.name=my-app
 ```
 
 # View uploaded snapshot
-![](img/02 - snapshot repository.png)
+![](img/02_snapshot_repository.png)
 
 # Use api to view nexus repo
 Nexus ima api za pregled repo i components.
