@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+    {%for blog in blogs:%}
+       <div>
+           <h3>{{blog.title}}</h3>
+           <p>{{blog.body}}</p>
+
+            {% if blog.id == 1 %}
+                <p>Its item 1</p>
+            {% endif %}
+
+           <hr>
+       </div>
+    {% endfor %}
+
+    <p># Izgradnja url linka koji gadja drugi endpoint</p>
+    <a href="{{url_for('test', num='5')}}">Go to blog</a>
+</body>
+</html>
