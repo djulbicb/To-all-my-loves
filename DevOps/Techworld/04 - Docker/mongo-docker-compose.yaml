@@ -9,13 +9,18 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=password
   mongo-express:
     image: mongo-express
+    volumes:
+      - mongo-data:/data/db
     ports:
-      - 8080:8080
+      - 8081:8081
     environment:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
-      - ME_CONFIG_MONGODB_ADMINPASSWORD=passowrd
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=password
       - ME_CONFIG_MONGODB_SERVER=mongodb
-  my-app:
-    image: my-app:1.0
-    ports:
-      - 3000:3000
+#  my-app:
+#    image: my-app:1.0
+#    ports:
+#      - 3000:3000
+volumes:
+  mongo-data:
+    driver: local

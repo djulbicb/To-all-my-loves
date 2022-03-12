@@ -46,6 +46,58 @@ docker logs <id> | tail
 docker logs <id> -f
 ```
 
+# Docker volumes
+Container runs on host and has virtual file system. But there is no persistance.
+Data is lost after restart and starts from fresh state.
+
+Postoje par tipova volume. Preporucuje se `named volumes`. Ovo je preko `docker run`
+```
+# host volume
+-v /host/mount/data:/docker/data
+
+# anonymus volumes
+# Docker sam kreira foldere
+- /docker/data
+
+# named volumes
+# Napredniji oblik anonymus volumes
+# Ne moras da znas putanju nego preko imena referenciras
+-v name:/docker/data
+```
+
+Preko docker compose `named volumes`. Izlistaju se volume koje zelis da mountujes u kontejnere.
+Ovako referenca foldera moze da se deli izmedju vise containera.
+```
+version: '3'
+services:
+    mongodb:
+        image: mongo
+        ports: 
+            - 27017:27017
+        volumes:
+            - db-data:/var/lib/mysql/data
+        mongo-express:
+            image: mongo-express
+volumes:
+    db-data
+```
+
+mongo Docker ce automatski da sacuva podatke u kontejneru na putanji
+`/data/db`
 
 
+Pokreni dockercompose
+Create
+db = my-db
+collection = users
 
+Docker volumes na OS
+# Windows
+C:/ProgramData/docker/volumes
+# Linux
+/var/lib/docker/volumes/<hash>/_data
+# Mac
+/var/lib/docker/volumes/<hash>/_data
+
+On mac terminate session in docker container
+ctrl + a + k
