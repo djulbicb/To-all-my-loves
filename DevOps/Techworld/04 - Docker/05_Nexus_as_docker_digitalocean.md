@@ -24,7 +24,7 @@ docker
 5. Start up `sonatype/nexus3` docker
 ```
 docker volume create --name nexus-data
-docker run -d -p 8081:8081 --name nexus -v nexus-data -e CONTEXT_PATH=/  sonatype/nexus3
+docker run -d -p 8081:8081 -p 8083:8083 --name nexus -v nexus-data -e CONTEXT_PATH=/  sonatype/nexus3
 apt install net-tools
 netstat -lpnt
 555.55.555.555:8081
