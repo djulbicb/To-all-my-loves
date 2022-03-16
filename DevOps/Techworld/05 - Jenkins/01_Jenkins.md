@@ -214,3 +214,12 @@ docker build -t 165.232.73.83:8083/echo-test:1.0 .
 echo $PASSWORD | docker login -u $USERNAME --password-stdin 165.232.73.83:8083
 docker push 165.232.73.83:8083/echo-test:1.0
 ```
+
+# Why pipelines
+Ovaj freestajl projekat radi vise koraka, package, build image, push. Ranije se svaki od ovakvih koraka definisao na novi job.
+
+Pa nakon sto se jedan freestyle job zavrsi sledeci job se izvrsava. U delu Post-build Actions > Other project. Definise se ime joba koji ce sledeci da bude trigerovan.
+
+Ovakav sistem je bio tezak za odrzvanje pa je zamenjen sa pipelinom.
+
+![](img/02_09_what_are_pipelines.png)
