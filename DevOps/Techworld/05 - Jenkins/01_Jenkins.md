@@ -223,3 +223,4 @@ Pa nakon sto se jedan freestyle job zavrsi sledeci job se izvrsava. U delu Post-
 Ovakav sistem je bio tezak za odrzvanje pa je zamenjen sa pipelinom.
 
 ![](img/02_09_what_are_pipelines.png)
+
