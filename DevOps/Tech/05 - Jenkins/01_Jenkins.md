@@ -106,7 +106,7 @@ Click on **build history**, **console**.
 ---
 
 # Connect git with jenkins
-Adding git repo is not required. Usually for git pipeline job is used. Freestyle project is used for some really specific tasks.
+Adding git repo is not required. Usually for git pipeline job is used. Freestyle project is used for some really specific tasks. Available cause of plugin credentials plugin.
 
 Create credentials (Username with password. Github credentials) and select it.
 
