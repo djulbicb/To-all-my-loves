@@ -6,7 +6,7 @@ import os
 import time
 import datetime
 from Product import Product
-
+# http://myhttpheader.com/
 URL:str = "https://www.amazon.com/dp/B00X9JNWGS/ref=sbl_dpx_kitchen-electric-cookware_B08GC6PL3D_0"
 
 def stripAlphabetCharacters(string: str):
