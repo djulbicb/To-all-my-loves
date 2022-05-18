@@ -48,3 +48,6 @@ https://changelog.com/posts/install-node-js-with-homebrew-on-os-x
 
 # Visual studio code
 [https://code.visualstudio.com/docs/setup/linux](https://code.visualstudio.com/docs/setup/linux)
+
+# Iris
+- [https://zoomadmin.com/HowToInstall/UbuntuPackage/libdbusmenu-gtk-dev](https://zoomadmin.com/HowToInstall/UbuntuPackage/libdbusmenu-gtk-dev)
