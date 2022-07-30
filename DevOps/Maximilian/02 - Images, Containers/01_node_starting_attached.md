@@ -9,6 +9,8 @@ So if 3 containers are running, those are not 3 copys.
 All 3 containers are using same image layers, but last layer is container specific.
 Image layers are read-only. Container layer is write/read.
 
+Every instruction (ie RUN, COPY...) in an image creates a cacheable layer. Layers help with image rebuilding and sharing
+
 ![](img/01_01_image_containerUntitled Diagram.drawio.png)
 ```
 # container will just close
@@ -19,6 +21,12 @@ docker run -it node
 
 # overrides default command
 docker run -it node bash
+
+# build image
+docker build .
+
+# run docker
+docker run -p hostPort:containerPort <imageHash or imageName>
 ```
 
 # Start project
@@ -114,4 +122,36 @@ EXPOSE 3000
 
 # CMD command has to be present. If image doesnt have it, cmd from parent image is called
 CMD ["node", "app.mjs"]
+```
+
+# Docker commands
+## --help
+Every docker command has `--help` flag that shows all options
+```
+docker --help
+docker run --help
+```
+## attached/detached
+`docker run` by default starts project in `attach` mode. `docker start` start by default in `detached` mode.
+```
+# start as detached in background
+docker run -d <imageId>
+# attach to already running 
+docker attach <containerIdOrName>
+```
+Restart containers
+```
+# restart closed container in detached mode
+docker start <containerIdOrName>
+
+# restart closed container in attached mode
+docker start -a <containerIdOrName>
+docker start --attach <containerIdOrName>
+```
+## logs
+```
+docker logs <containerIdOrName>
+# follow logs in attached mode
+docker logs -f <containerIdOrName>
+docker logs --follow <containerIdOrName>
 ```
