@@ -55,7 +55,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Love</h1>
+      <h1>Love Update</h1>
       <div>
         <p>Add goal</p>
         <input placeholder='Type goal and press enter' value={goal} onKeyDown={handleKeyDown} onChange={handleGoalChange}></input>

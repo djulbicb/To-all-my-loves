@@ -7,8 +7,13 @@ import bodyParser from "body-parser";
 import morgan from "morgan";
 import Goal from "./model/Goal.mjs";
 import cors from "cors"
+import dotenv from 'dotenv';
 
 const app = express()
+
+dotenv.config({path:"dev.env"});
+console.log(process.env)
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -83,11 +88,15 @@ app.delete('/goals/:id', async (req, res) => {
     }
   });
 
-mongoose.connect(
-    `mongodb://localhost:27017/course-goals`,
+  console.log(`mongodb://${process.env.MONGO_URL}:27017/course-goals`);
+  await mongoose.connect(
+    `mongodb://${process.env.MONGO_URL}:27017/course-goals`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      authSource: "admin",
+      user: process.env.MONGO_USERNAME,
+      pass: process.env.MONGO_PASSWORD,
     },
     (err) => {
       if (err) {
@@ -95,7 +104,7 @@ mongoose.connect(
         console.error(err);
       } else {
         console.log('CONNECTED TO MONGODB!!');
-        app.listen(2000);
+        app.listen(process.env.BACKEND_PORT);
       }
     }
   );
